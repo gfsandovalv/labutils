@@ -1,0 +1,4 @@
+título: Medición de la constante de Planck
+autores: Gabriel Sandoval, Pepito Perez
+fecha: 22 de abril
+universidad: Universidad Nacional de Colombia, Departamento de Física
