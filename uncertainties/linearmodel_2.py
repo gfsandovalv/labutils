@@ -1,5 +1,6 @@
 from os import stat
 from statistics import covariance
+from tkinter import Y
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -71,7 +72,7 @@ class LinModel():
 
         N = len(summaries)
 
-        instrumental_error = 0.1
+        instrumental_error = 0.03
         for index in total_summary.index:
             total_summary.loc[index]['Valor estimado'] = takes_summaries.loc[index]['Valor estimado'].mean()
             total_summary.loc[index]['Incertidumbre'] = (takes_summaries.loc[index]['Incertidumbre'].pow(2).sum() + instrumental_error**2)**0.5/N
@@ -153,7 +154,7 @@ class LinModel():
                 data_label=data_labels[i], colors=colors_array[i], plot_data=plot_data, plot_fit=plot_fit, significant_figures=significant_figures, show_function_dependency=show_function_dependency, adimensional_x_y=adimensional_x_y, fitted_func=self.fit_functions[i], show_expression=False)
         self.plot_single_take(plot_data=False, fitted_func=self.mean_fit, ls='-.', colors=['', 'green'], x_var_name=x_var_name, y_var_name=y_var_name, 
         x_var_units=x_var_units, y_var_units=y_var_units, 
-        plot_fit=plot_fit, significant_figures=significant_figures, show_function_dependency=show_function_dependency, adimensional_x_y=adimensional_x_y)
+        plot_fit=plot_fit, significant_figures=significant_figures, show_function_dependency=show_function_dependency, adimensional_x_y=adimensional_x_y, yerr=yerr, xerr=xerr)
         #plt.plot(self.takes[0]['cos_theta_sq'], self.mean_fit(self.takes[0]['cos_theta_sq']), ls='-.', label='Promedio')
         #plt.legend()
         
