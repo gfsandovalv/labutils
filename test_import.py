@@ -1,5 +1,3 @@
-from operator import truediv
-import uncertainties as unc
-import pandas as pd
+from uncertainties import measurement as ms
+k = ms.Observable(symbol='T', definition='(M+k)/m_sample*(T_e - T_0)/(T - T_e)')
 
-period = unc.Observable('Period of pendulumn', symbol='T')
